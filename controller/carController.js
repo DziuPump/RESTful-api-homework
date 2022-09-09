@@ -45,3 +45,12 @@ export const updateCar =  async(req,res) => {
         console.error(error)
     }
 };
+
+export const deleteMultipleCars = async(req, res) => {
+    try {
+        await carModel.deleteMany(req.body);
+        res.status(200).send(`car has been successfully deleted`);
+    } catch (error) {
+        console.error(error)
+    }
+}
